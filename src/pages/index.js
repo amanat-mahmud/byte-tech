@@ -1,10 +1,11 @@
 import Image from "next/image";
 import { Inter } from "next/font/google";
 import Head from "next/head";
+import RootLayout from "@/components/Layouts/RootLayout";
 
 const inter = Inter({ subsets: ["latin"] });
 
-export default function Home() {
+export default function HomePage() {
   return (
     <div>
       <Head>
@@ -14,3 +15,11 @@ export default function Home() {
     </div>
   );
 }
+
+HomePage.getLayout = function getLayout(page) {
+  return (
+    <RootLayout>
+      {page}
+    </RootLayout>
+  )
+} 
