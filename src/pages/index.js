@@ -12,6 +12,7 @@ export default function HomePage() {
         <html data-theme="dark"></html>
         <title>Byte tech</title>
       </Head>
+      
     </div>
   );
 }
