@@ -1,10 +1,17 @@
 import RootLayout from '@/components/Layouts/RootLayout';
+import Link from 'next/link';
 import React from 'react';
 
 const PcBuilderPage = () => {
     return (
         <div>
-            Test
+            <div>
+            <div className='flex'>
+                <h1 className='text-3xl font-bold items-center'>Processor</h1>
+                <Link href='/component/processor'><button className="btn btn-accent">Choose</button></Link>
+            </div>
+            <div></div>
+            </div>
         </div>
     );
 };
