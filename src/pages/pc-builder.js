@@ -12,6 +12,13 @@ const PcBuilderPage = () => {
             </div>
             <div></div>
             </div>
+            <div>
+            <div className='flex'>
+                <h1 className='text-3xl font-bold items-center'>Motherboard</h1>
+                <Link href='/component/motherboard'><button className="btn btn-accent">Choose</button></Link>
+            </div>
+            <div></div>
+            </div>
         </div>
     );
 };
