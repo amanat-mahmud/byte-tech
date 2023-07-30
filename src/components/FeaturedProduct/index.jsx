@@ -10,7 +10,7 @@ const FeaturedProduct = ({product}) => {
   <div className="card-body">
     <h2 className="card-title">
     {productName}
-      <div className="badge badge-accent">{category}</div>
+      <div className="badge badge-accent h-auto">{category}</div>
     </h2>
     <p>{description.slice(0,100)+"..."}</p>
     <div className='flex'>
