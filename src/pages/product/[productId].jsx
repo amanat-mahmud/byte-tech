@@ -1,7 +1,7 @@
 import RootLayout from '@/components/Layouts/RootLayout';
 import Image from 'next/image';
-import { useRouter } from 'next/router';
 import React, { useState } from "react";
+import {AiFillStar} from "react-icons/ai";
 
 const ProductDetails = ({product}) => {
     const {averageRating,category,description,image,individualRating,keyFeatures,price,productName,reviews,status,_id
@@ -28,11 +28,19 @@ const ProductDetails = ({product}) => {
                     >
                         {productName}
                     </h1>
+                    <span className="badge badge-accent mt-2">{category}</span>
                 </div>
                 <div className="py-4 border-b border-gray-200 flex items-center justify-between">
                     <p className="text-2xl font-bold">Price</p>
                     <div className="flex items-center justify-center">
-                        <p className="text-2xl font-bold leading-none mr-3">${price}</p>
+                        <p className="text-2xl font-bold leading-none mr-3">{price}</p>
+                    </div>
+                </div>
+                <div className="py-4 border-b border-gray-200 flex items-center justify-between">
+                    <p className="text-2xl font-bold">Rating</p>
+                    <div className="flex items-center justify-center">
+                        <AiFillStar className="text-2xl"/>
+                        <p className="text-2xl">{averageRating}</p>  
                     </div>
                 </div>
                 <button
@@ -59,17 +67,14 @@ const ProductDetails = ({product}) => {
                     {status}
                 </button>
                 <div>
-                    <p className="xl:pr-48 text-base lg:leading-tight leading-normal text-gray-600 mt-7">It is a long established fact that a reader will be distracted by thereadable content of a page when looking at its layout. The point of usingLorem Ipsum is that it has a more-or-less normal distribution of letters.</p>
-                    <p className="text-base leading-4 mt-7 text-gray-600">Product Code: 8BN321AF2IF0NYA</p>
-                    <p className="text-base leading-4 mt-4 text-gray-600">Length: 13.2 inches</p>
-                    <p className="text-base leading-4 mt-4 text-gray-600">Height: 10 inches</p>
-                    <p className="text-base leading-4 mt-4 text-gray-600">Depth: 5.1 inches</p>
-                    <p className="md:w-96 text-base leading-normal text-gray-600 mt-4">Composition: 100% calf leather, inside: 100% lamb leather</p>
+                    <p className=" text-base lg:leading-tight leading-normal mt-7">{description}</p>
+                    <p className="text-xl leading-4 mt-7">Key Features</p>
+                    {keyFeatures.map((feature,idx)=><p className="text-base leading-4 mt-4 " key={idx}>{feature}</p>)}
                 </div>
                 <div>
                     <div className="border-t border-b py-4 mt-7 border-gray-200">
                         <div onClick={() => setShow(!show)} className="flex justify-between items-center cursor-pointer">
-                            <p className="text-base leading-4 text-gray-800">Shipping and returns</p>
+                            <p className="text-base leading-4">Shipping and returns</p>
                             <button
                                 className="
 									cursor-pointer
@@ -91,7 +96,7 @@ const ProductDetails = ({product}) => {
                 <div>
                     <div className="border-b py-4 border-gray-200">
                         <div onClick={() => setShow2(!show2)} className="flex justify-between items-center cursor-pointer">
-                            <p className="text-base leading-4 text-gray-800">Contact us</p>
+                            <p className="text-base leading-4 ">Contact us</p>
                             <button
                                 className="
 									cursor-pointer
