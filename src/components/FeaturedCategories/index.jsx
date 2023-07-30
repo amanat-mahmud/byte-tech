@@ -7,30 +7,37 @@ const FeaturedCategories = () => {
     {
       image: "https://icons8.com/icon/9095/electronics",
       name: "CPU",
+      link:"/category/cpu"
     },
     {
       image: "https://icons8.com/icon/35849/motherboard",
       name: "Motherboard",
+      link:"/category/motherboard"
     },
     {
       image: "https://icons8.com/icon/XbYaMYxvDSqK/ram",
       name: "Ram",
+      link:"/category/ram"
     },
     {
       image: "https://icons8.com/icon/lTpD2WXc5cqZ/power-supply",
       name: "Power Supply",
+      link:"/category/power-supply"
     },
     {
       image: "https://icons8.com/icon/9936/stack",
       name: "Storage Device",
+      link:"/category/storage-device"
     },
     {
       image: "https://icons8.com/icon/37837/monitor",
       name: "Monitor",
+      link:"/category/monitor"
     },
     {
       image: "https://icons8.com/icon/68602/video-card",
       name: "Others",
+      link:"/category/others"
     },
   ];
   return (

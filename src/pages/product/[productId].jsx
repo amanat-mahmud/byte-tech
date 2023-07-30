@@ -186,7 +186,7 @@ const ProductDetails = ({ product }) => {
                       width="50"
                       height="50"
                       src="https://i.ibb.co/X7Pnwry/main-qimg-c77c9e1c01ec9e3780be0c03bcb03ba8-lq.jpg"
-                      alt="avater"
+                      alt="avatar"
                     />
                   </div>
                 </div>
