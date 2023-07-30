@@ -5,37 +5,37 @@ import React from "react";
 const FeaturedCategories = () => {
   const categories = [
     {
-      image: "https://icons8.com/icon/9095/electronics",
+      image: "https://images.unsplash.com/photo-1625315714730-d0830cd368bd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1332&q=80",
       name: "CPU",
       link:"/category/processor"
     },
     {
-      image: "https://icons8.com/icon/35849/motherboard",
+      image: "https://images.unsplash.com/photo-1589779255718-3c459da9ffeb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1332&q=80",
       name: "Motherboard",
       link:"/category/motherboard"
     },
     {
-      image: "https://icons8.com/icon/XbYaMYxvDSqK/ram",
+      image: "https://images.unsplash.com/photo-1618352926724-69e5e4215eef?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1469&q=80",
       name: "Ram",
       link:"/category/ram"
     },
     {
-      image: "https://icons8.com/icon/lTpD2WXc5cqZ/power-supply",
+      image: "https://images.unsplash.com/photo-1588382472578-8d8b337b277a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80",
       name: "Power Supply",
       link:"/category/power-supply"
     },
     {
-      image: "https://icons8.com/icon/9936/stack",
+      image: "https://images.unsplash.com/photo-1589995186053-91d65273cd68?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80",
       name: "Storage Device",
       link:"/category/storage-device"
     },
     {
-      image: "https://icons8.com/icon/37837/monitor",
+      image: "https://images.unsplash.com/photo-1588200908342-23b585c03e26?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80",
       name: "Monitor",
       link:"/category/monitor"
     },
     {
-      image: "https://icons8.com/icon/68602/video-card",
+      image: "https://images.unsplash.com/photo-1632749042303-7f7a18ed6ff0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80",
       name: "Others",
       link:"/category/others"
     },
@@ -51,14 +51,14 @@ const FeaturedCategories = () => {
             >
               <figure>
                 <Image
-                  width="200"
+                  width="400"
                   height="200"
                   src={category.image}
                   alt="PC Component"
                 />
               </figure>
               <div className="card-body flex justify-center items-center">
-                <h1 className="text-4xl font-bold">{category.name}</h1>
+                <h1 className="text-4xl font-bold text-white">{category.name}</h1>
               </div>
             </div>
           </Link>
