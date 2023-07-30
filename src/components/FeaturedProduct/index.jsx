@@ -1,22 +1,23 @@
 import Image from 'next/image';
 
-const FeaturedProduct = () => {
+const FeaturedProduct = ({product}) => {
+  const {_id,image,productName,category,description,status,averageRating,price} = product;
     return (
         <div className="card w-96 bg-base-100 shadow-xl">
   <figure>
-    <Image src="https://i.ibb.co/6rj4618/amd-ryzen-5-5500-01-500x500.jpg" alt="Shoes" width="300" height="300" /></figure>
+    <Image src={image} alt="Shoes" width="300" height="300" /></figure>
   <div className="card-body">
     <h2 className="card-title">
-    productName
-      <div className="badge badge-accent">category</div>
+    {productName}
+      <div className="badge badge-accent">{category}</div>
     </h2>
-    <p>description</p>
+    <p>{description.slice(0,100)+"..."}</p>
     <div className='flex'>
-    <div className="badge badge-outline mr-2">status</div>
-      <div className="badge badge-outline">averageRating</div>
+    <div className="badge badge-outline mr-2">{status}</div>
+      <div className="badge badge-outline">{averageRating}</div>
     </div>
     <div className="card-actions items-center justify-end mt-4">
-        <p>price</p>
+        <p>{price}</p>
       <button className="btn btn-primary">See Details</button>
     </div>
   </div>
