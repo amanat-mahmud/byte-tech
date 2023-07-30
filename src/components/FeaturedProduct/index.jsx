@@ -1,5 +1,6 @@
 import Image from 'next/image';
-
+import Link from 'next/link';
+import {AiFillStar} from "react-icons/ai"
 const FeaturedProduct = ({product}) => {
   const {_id,image,productName,category,description,status,averageRating,price} = product;
     return (
@@ -14,11 +15,11 @@ const FeaturedProduct = ({product}) => {
     <p>{description.slice(0,100)+"..."}</p>
     <div className='flex'>
     <div className="badge badge-outline mr-2">{status}</div>
-      <div className="badge badge-outline">{averageRating}</div>
+      <div className="badge badge-outline"><AiFillStar/>{averageRating}</div>
     </div>
     <div className="card-actions items-center justify-end mt-4">
-        <p>{price}</p>
-      <button className="btn btn-primary">See Details</button>
+        <p className='text-2xl font-bold'>{price}</p>
+      <Link href={`/product/${_id}`}><button className="btn btn-primary">See Details</button></Link>
     </div>
   </div>
 </div>
