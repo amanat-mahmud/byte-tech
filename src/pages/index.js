@@ -1,10 +1,10 @@
 import Head from "next/head";
 import RootLayout from "@/components/Layouts/RootLayout";
 import FeaturedProducts from "@/views/FeaturedProducts";
+import FeaturedCategories from "@/components/FeaturedCategories";
 
 
 export default function HomePage({allProducts}) {
-  // console.log(allProducts);
   return (
     <div>
       <Head>
@@ -12,6 +12,7 @@ export default function HomePage({allProducts}) {
         <title>Byte tech</title>
       </Head>
       <FeaturedProducts allProducts={allProducts}/>
+      <FeaturedCategories/>
     </div>
   );
 }

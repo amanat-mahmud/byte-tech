@@ -3,7 +3,7 @@ import React from 'react';
 
 const NavBar = () => {
     const dropDownItems = 
-    <ul className="p-2">
+    <ul className="p-2 z-10">
     <li><Link href="/">Processor</Link></li>
     <li><Link href="/">Motherboard</Link></li>
     <li><Link href="/">Ram</Link></li>
