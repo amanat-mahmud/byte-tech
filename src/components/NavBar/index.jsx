@@ -1,7 +1,8 @@
 import Link from 'next/link';
 import React from 'react';
-
+import { useSession,signOut} from "next-auth/react";
 const NavBar = () => {
+  // const { data: session } = useSession();
     const dropDownItems = 
     <ul className="p-2 z-10">
     <li><Link href="/category/processor">Processor</Link></li>
@@ -43,7 +44,8 @@ const NavBar = () => {
     </ul>
   </div>
   <div className="navbar-end">
-    <Link href='/login' className="btn btn-accent mr-2">Log in</Link>
+    {"" ?<button className="btn btn-danger mr-2" onClick={()=>signOut()}>Log out</button>:<Link href='/login' className="btn btn-accent mr-2">Log in</Link> }
+    
     <Link href="/pc-builder" className="btn btn-accent">Pc Builder</Link>
   </div>
 </div>
