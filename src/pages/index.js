@@ -4,6 +4,7 @@ import FeaturedProducts from "@/views/FeaturedProducts";
 
 
 export default function HomePage({allProducts}) {
+  // console.log(allProducts);
   return (
     <div>
       <Head>
@@ -15,16 +16,35 @@ export default function HomePage({allProducts}) {
   );
 }
 
+// export const getStaticPaths = async () => {
+//   const res = await fetch('https://byte-tech-server.vercel.app/products');
+//   const allProducts = await res.json();
+//   const paths = allProducts.map((product)=>({
+//    params:{productId:product.id},
+//   }));
+//   return {paths,fallback:false}
+// }
+
 export const getStaticProps = async () => {
-  const res = await fetch('https://byte-tech-server.vercel.app/products');
-  const data = await res.json();
-  return {
-    props:{
-      allProducts:data,
+  try{
+    const res = await fetch('https://byte-tech-server.vercel.app/products');
+    const data = await res.json();
+    console.log(data);
+    return {
+      props:{
+        allProducts:data,
+      }
     }
   }
+  catch (error) {
+    console.error('Error fetching data:', error);
+    return {
+      props: {
+        allProducts: []
+      },
+    };
 }
-
+}
 HomePage.getLayout = function getLayout(page) {
   return (
     <RootLayout>
