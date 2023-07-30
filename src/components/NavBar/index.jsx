@@ -4,7 +4,7 @@ import React from 'react';
 const NavBar = () => {
     const dropDownItems = 
     <ul className="p-2 z-10">
-    <li><Link href="/category/cpu">Processor</Link></li>
+    <li><Link href="/category/processor">Processor</Link></li>
     <li><Link href="/category/motherboard">Motherboard</Link></li>
     <li><Link href="/category/ram">Ram</Link></li>
     <li><Link href="/category/power-supply">Power Supply</Link></li>

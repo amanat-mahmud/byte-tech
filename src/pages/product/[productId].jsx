@@ -9,13 +9,11 @@ const ProductDetails = ({ product }) => {
     category,
     description,
     image,
-    individualRating,
     keyFeatures,
     price,
     productName,
     reviews,
     status,
-    _id,
   } = product;
   const [show, setShow] = useState(false);
   const [show2, setShow2] = useState(false);

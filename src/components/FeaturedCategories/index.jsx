@@ -7,7 +7,7 @@ const FeaturedCategories = () => {
     {
       image: "https://icons8.com/icon/9095/electronics",
       name: "CPU",
-      link:"/category/cpu"
+      link:"/category/processor"
     },
     {
       image: "https://icons8.com/icon/35849/motherboard",
