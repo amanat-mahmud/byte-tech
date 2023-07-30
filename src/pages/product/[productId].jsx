@@ -179,9 +179,9 @@ const ProductDetails = ({ product }) => {
         <div>
           <h1 className="text-3xl font-bold my-4">Reviews:</h1>
           {reviews?.map((review) => (
-              <div className="flex items-center my-4 border" key={review.username}>
+              <div className="flex items-center my-4 border p-4" key={review.username}>
                 <div className="avatar">
-                  <div className="w-24 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
+                  <div className="w-16 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
                     <Image
                       width="50"
                       height="50"
@@ -191,7 +191,9 @@ const ProductDetails = ({ product }) => {
                   </div>
                 </div>
                 <div className="ml-5">
-                {review.username}
+                <p className="text-xl">{review.username}</p>
+                <p className="flex items-center text-xl"><AiFillStar/> {review.rating}</p>
+                <p className="text-xl">{review.comment}</p>
                 </div>
               </div>
           ))}

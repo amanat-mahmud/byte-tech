@@ -45,7 +45,7 @@ const FeaturedCategories = () => {
       <h1 className="text-4xl font-bold">Featured Categories</h1>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-6">
         {categories.map((category) => (
-          <Link  key={categories.name} href={`/category/${category.name}`}>
+          <Link  key={category.name} href={category.link}>
             <div
               className="card w-96 bg-base-100 shadow-xl image-full"
             >
