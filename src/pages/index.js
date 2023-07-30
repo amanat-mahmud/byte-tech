@@ -16,20 +16,11 @@ export default function HomePage({allProducts}) {
   );
 }
 
-// export const getStaticPaths = async () => {
-//   const res = await fetch('https://byte-tech-server.vercel.app/products');
-//   const allProducts = await res.json();
-//   const paths = allProducts.map((product)=>({
-//    params:{productId:product.id},
-//   }));
-//   return {paths,fallback:false}
-// }
 
 export const getStaticProps = async () => {
   try{
     const res = await fetch('https://byte-tech-server.vercel.app/products');
     const data = await res.json();
-    console.log(data);
     return {
       props:{
         allProducts:data,

@@ -1,16 +1,17 @@
+import RootLayout from '@/components/Layouts/RootLayout';
 import Image from 'next/image';
 import { useRouter } from 'next/router';
 import React, { useState } from "react";
 
-const ProductDetails = () => {
-    const router = useRouter();
-    const {productId} = router.query;
+const ProductDetails = ({product}) => {
+    const {averageRating,category,description,image,individualRating,keyFeatures,price,productName,reviews,status,_id
+        } = product;
     const [show, setShow] = useState(false);
     const [show2, setShow2] = useState(false);
     return (
         <div className="md:flex items-start justify-center py-12 2xl:px-20 md:px-6 px-4">
             <div className="xl:w-2/6 lg:w-2/5 w-80 md:block hidden">
-                <Image width="300" height="300" className="mt-6 w-full" alt="img of a girl posing" src="https://i.ibb.co/qxkRXSq/component-image-two.png" />
+                <Image width="300" height="300" className="mt-6 w-full" alt="img of a girl posing" src={image} />
             </div>
             <div className="md:hidden">
                 <Image width="300" height="300" className="w-full" alt="img of a girl posing" src="https://i.ibb.co/QMdWfzX/component-image-one.png" />
@@ -25,13 +26,13 @@ const ProductDetails = () => {
 							lg:leading-9
 							leading-8"
                     >
-                        Balenciaga Signature Sweatshirt
+                        {productName}
                     </h1>
                 </div>
                 <div className="py-4 border-b border-gray-200 flex items-center justify-between">
                     <p className="text-2xl font-bold">Price</p>
                     <div className="flex items-center justify-center">
-                        <p className="text-2xl font-bold leading-none mr-3">$38.2</p>
+                        <p className="text-2xl font-bold leading-none mr-3">${price}</p>
                     </div>
                 </div>
                 <button
@@ -43,10 +44,10 @@ const ProductDetails = () => {
 						justify-center
 						leading-none
 						text-white
-						bg-gray-800
+						btn-accent
 						w-full
 						py-4
-						hover:bg-gray-700
+                        mt-2
 					"
                 >
                     <svg className="mr-3" width="16" height="17" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -55,7 +56,7 @@ const ProductDetails = () => {
                         <path d="M13.69 13.8567C14.1563 13.3905 14.4738 12.7966 14.6025 12.15C14.7312 11.5033 14.6653 10.8331 14.413 10.2239C14.1608 9.61476 13.7335 9.09411 13.1853 8.72779C12.6372 8.36148 11.9926 8.16595 11.3333 8.16595C10.674 8.16595 10.0295 8.36148 9.48133 8.72779C8.93314 9.09411 8.5059 9.61476 8.25364 10.2239C8.00138 10.8331 7.93543 11.5033 8.06412 12.15C8.19282 12.7966 8.51039 13.3905 8.97667 13.8567L11.3333 16.2142L13.69 13.8567Z" stroke="white" strokeWidth="1.25" strokeLinecap="round" strokeLinejoin="round" />
                         <path d="M11.333 11.5V11.5083" stroke="white" strokeWidth="1.25" strokeLinecap="round" strokeLinejoin="round" />
                     </svg>
-                    Check availability in store
+                    {status}
                 </button>
                 <div>
                     <p className="xl:pr-48 text-base lg:leading-tight leading-normal text-gray-600 mt-7">It is a long established fact that a reader will be distracted by thereadable content of a page when looking at its layout. The point of usingLorem Ipsum is that it has a more-or-less normal distribution of letters.</p>
@@ -117,3 +118,43 @@ const ProductDetails = () => {
 
 
 export default ProductDetails;
+
+export const getStaticPaths = async () => {
+  const res = await fetch('https://byte-tech-server.vercel.app/products');
+  const allProducts = await res.json();
+  const paths = allProducts.map((product)=>({
+   params:{productId:product._id},
+  }));
+  return {paths,fallback:false}
+}
+
+export const getStaticProps = async ({ params }) => {
+    try{
+    const { productId } = params; 
+      const res = await fetch(`https://byte-tech-server.vercel.app/product/${productId}`);
+      const data = await res.json();
+      console.log(data);
+      return {
+        props:{
+          product:data,
+        }
+      }
+    }
+    catch (error) {
+      console.error('Error fetching data:', error);
+      return {
+        props: {
+          product: {}
+        },
+      };
+  }
+  }
+
+
+ProductDetails.getLayout = function getLayout(page) {
+    return (
+      <RootLayout>
+        {page}
+      </RootLayout>
+    )
+  } 
