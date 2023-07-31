@@ -3,8 +3,8 @@ const initialState = {
     processor:"",
     motherboard:"",
     ram:"",
-    storage:"",
-    power:"",
+    storageDevice:"",
+    powerSupply:"",
     monitor:"",
 }
 const componentSlice = createSlice({
