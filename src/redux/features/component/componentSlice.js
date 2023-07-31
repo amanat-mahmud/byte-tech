@@ -14,8 +14,13 @@ const componentSlice = createSlice({
         addComponent:(state,action) => {
             const { key, value } = action.payload;
             state[key] = value;
-        }
+        },
+        emptyAllComponents: (state) => {
+            Object.keys(state).forEach((key) => {
+              state[key] = initialState[key];
+            });
+          },
     }
 });
 export default componentSlice.reducer;
-export const {addComponent} = componentSlice.actions;
+export const {addComponent,emptyAllComponents} = componentSlice.actions;

@@ -22,12 +22,12 @@ const FeaturedCategories = () => {
     {
       image: "https://images.unsplash.com/photo-1588382472578-8d8b337b277a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80",
       name: "Power Supply",
-      link:"/category/power-supply"
+      link:"/category/powerSupply"
     },
     {
       image: "https://images.unsplash.com/photo-1589995186053-91d65273cd68?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80",
       name: "Storage Device",
-      link:"/category/storage-device"
+      link:"/category/storageDevice"
     },
     {
       image: "https://images.unsplash.com/photo-1588200908342-23b585c03e26?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80",

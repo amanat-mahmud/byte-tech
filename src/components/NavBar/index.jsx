@@ -8,8 +8,8 @@ const NavBar = () => {
     <li><Link href="/category/processor">Processor</Link></li>
     <li><Link href="/category/motherboard">Motherboard</Link></li>
     <li><Link href="/category/ram">Ram</Link></li>
-    <li><Link href="/category/power-supply">Power Supply</Link></li>
-    <li><Link href="/category/storage-device">Storage Device</Link></li>
+    <li><Link href="/category/powerSupply">Power Supply</Link></li>
+    <li><Link href="/category/storageDevice">Storage Device</Link></li>
     <li><Link href="/category/monitor">Monitor</Link></li>
     <li><Link href="/category/others">Others</Link></li>
     </ul>
