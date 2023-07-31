@@ -2,6 +2,7 @@ import Head from "next/head";
 import RootLayout from "@/components/Layouts/RootLayout";
 import FeaturedProducts from "@/views/FeaturedProducts";
 import FeaturedCategories from "@/components/FeaturedCategories";
+import HeroSection from "@/views/HeroSection";
 
 
 export default function HomePage({allProducts}) {
@@ -11,6 +12,7 @@ export default function HomePage({allProducts}) {
         <html data-theme="dark"></html>
         <title>Byte tech</title>
       </Head>
+      <HeroSection/>
       <FeaturedProducts allProducts={allProducts}/>
       <FeaturedCategories/>
     </div>
