@@ -2,11 +2,16 @@ import RootLayout from '@/components/Layouts/RootLayout';
 import { emptyAllComponents } from '@/redux/features/component/componentSlice';
 import Link from 'next/link';
 import React from 'react';
+import { toast } from 'react-hot-toast';
 import { useDispatch, useSelector } from 'react-redux';
 
 const PcBuilderPage = () => {
     const dispatch = useDispatch()
     const {processor,motherboard,ram,storageDevice,powerSupply,monitor} = useSelector((state) => state.component);
+    const handleCompleteBuild = () =>{
+        dispatch(emptyAllComponents());
+        toast.success("Build successful");
+    }
     return (
         <div className='m-6'>
             <div>
@@ -52,7 +57,7 @@ const PcBuilderPage = () => {
             <div>{monitor}</div>
             </div>
             {
-                processor && motherboard && ram && storageDevice && powerSupply && monitor  ? <button className='btn btn-accent my-6' onClick={()=>dispatch(emptyAllComponents())}>Complete build</button> : <button className='btn my-6 text-white' disabled>Complete build</button>
+                processor && motherboard && ram && storageDevice && powerSupply && monitor  ? <button className='btn btn-accent my-6' onClick={handleCompleteBuild}>Complete build</button> : <button className='btn my-6 text-white' disabled>Complete build</button>
             }
         </div>
     );

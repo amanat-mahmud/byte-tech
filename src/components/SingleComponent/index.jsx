@@ -21,7 +21,8 @@ const SingleComponent = ({product}) => {
     </div>
     <div className="card-actions items-center justify-end mt-4">
         <p className='text-2xl font-bold'>{price}</p>
-      <Link href={`/pc-builder`} onClick={() => dispatch(addComponent({ key: category, value: productName }))}><button className="btn btn-accent">Add to builder</button></Link>
+      {status === "In Stock" ? <Link href={`/pc-builder`} onClick={() => dispatch(addComponent({ key: category, value: productName }))}><button className="btn btn-accent">Add to builder</button></Link>:
+      <button className='btn btn-danger'>Out of stock</button>}
     </div>
   </div>
 </div>
