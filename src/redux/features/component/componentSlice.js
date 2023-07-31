@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 const initialState = {
-    cpu:"",
+    processor:"",
     motherboard:"",
     ram:"",
     storage:"",
@@ -12,9 +12,10 @@ const componentSlice = createSlice({
     initialState,
     reducers:{
         addComponent:(state,action) => {
-            state.push(action.payload)
+            const { key, value } = action.payload;
+            state[key] = value;
         }
     }
 });
-export default componentSlice.reducers;
-export const {addComponent} = componentSlice.actions
+export default componentSlice.reducer;
+export const {addComponent} = componentSlice.actions;
